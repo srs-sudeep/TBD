@@ -10,6 +10,7 @@ import {
   updateDoc,
   deleteDoc,
 } from "firebase/firestore";
+import * as assets from "../assets"
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -65,6 +66,7 @@ export default function Inventory() {
     <div className='flex flex-row'>
     <Sidebar />
     <div>    
+      <div className="mx-10 mt-5 mb-8 text-4xl font-bold">Inventory</div>
       <table className="w-[75vw] mx-10 my-5 border  border-gray-300">
         <thead>
           <tr >
@@ -93,9 +95,11 @@ export default function Inventory() {
                   <td>{item.quantity}</td>
                   <td>{item.amount}</td>
                   <td>
-                    <button className="button  bg-black text-white my-2 mx-2 p-1" onClick={() => handleEdit(item.id)}>Edit</button>
-                    <button className="button  bg-black text-white p-1 rounded-" onClick={() => handleDelete(item.id)}>
-                      Delete
+                    <button onClick={() => handleEdit(item.id)}>
+                      <img src={assets.Edit} alt="edit" className="edit h-[20px]"/>
+                    </button>
+                    <button onClick={() => handleDelete(item.id)}>
+                      <img src={assets.Delete} alt="delete" className="delete h-[20px]"/>
                     </button>
                   </td>
                 </tr>

@@ -21,6 +21,7 @@ function CustomTabPanel(props) {
 
   return (
     <div
+      className="mx-10"
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -154,9 +155,10 @@ const Home = () => {
   console.log(data);
   return (
     <>
-      <div className="flex flex-row gap-3">
+      <div className="flex flex-row">
         <Sidebar />
-        <div className="right-div">
+        <div className="right-div mx-10">
+          <div className=" mt-5 mb-8 text-4xl font-bold">Dashboard</div>
           <div className="flex flex-row gap-5">
             <div className="box">
               <div className="rectangle-wrapper">

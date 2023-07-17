@@ -18,3 +18,12 @@
 .button {
     border-radius: 0.15cm;
 }
+
+.edit{
+  filter: drop-shadow(1px 1px 1px rgba(10, 255, 10, 0.9));
+}
+
+
+.delete{
+  filter: drop-shadow(1px 1px 1px rgba(255, 10, 10, 0.7));
+}

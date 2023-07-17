@@ -9,7 +9,8 @@ import Money from "./images/Money.png";
 import Sign_out_squre from "./images/Sign_out_squre.png";
 import Box_open from "./images/Box_open.png";
 import Bag from "./images/Bag.png";
-
+import Delete from "./images/delete.png"
+import Edit from "./images/editing.png"
 export {
   logonav,
   avatar,
@@ -22,4 +23,6 @@ export {
   Sign_out_squre,
   Box_open,
   Bag,
+  Delete,
+  Edit,
 };

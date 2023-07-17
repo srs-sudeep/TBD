@@ -33,9 +33,11 @@ export default function Sale() {
     <div className="flex">
     <Sidebar />
     <div>
+      <div className="mx-10 mt-5 mb-8 text-4xl font-bold">Sales!</div>
       <Link to="/saleform">
         <button className="px-10 py-4 rounded-full text-gray-100 bg-gray-950 mx-10 mt-0">Add Bill!</button>
       </Link>
+      <div className="mx-10 my-5 text-2xl font-semibold">See Your Sales!</div>
       <table className="w-[75vw] mx-10 mt-5 border  border-gray-300">
         <thead>
           <tr >
