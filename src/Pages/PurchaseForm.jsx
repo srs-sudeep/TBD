@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { db } from "../services/firebase";
-import { addDoc, collection, doc, updateDoc, setDoc, getDoc } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  updateDoc,
+  setDoc,
+  getDoc,
+  runTransaction,
+} from "firebase/firestore";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -92,16 +100,32 @@ const PurchaseForm = () => {
           sellerAddress: sellerAddress,
           sellerNumber: sellerNumber,
         });
-        
+
         items.map(async (item) => {
-          const ref = doc(db, `tbd-database/${user.uid}/inventory/${item.modelNumber}`);
+          const ref = doc(
+            db,
+            `tbd-database/${user.uid}/inventory`, item.modelNumber
+          );
           const docSnap = await getDoc(ref);
-          if (docSnap.exists()){
-            console.log("here")
-          }else{
-            console.log("there")
+          if (docSnap.exists()) {
+            await runTransaction(db, async (transaction) => {
+              const sfDoc = await transaction.get(ref);
+
+              const newCount = (
+                Number(sfDoc.data().quantity) + Number(item.quantity)
+              ).toString();
+              transaction.update(ref, { quantity: newCount });
+            });
+          } else {
+            await setDoc(ref, {
+              brandName: item.brandName,
+              modelNumber: item.modelNumber,
+              quantity: item.quantity,
+              amount: item.amount,
+              gstApplicable: item.gstApplicable,
+            });
           }
-        })
+        });
 
         return;
       } catch (e) {
@@ -110,13 +134,12 @@ const PurchaseForm = () => {
     };
 
     addPurchase(user);
-    
+
     navigate("/purchase");
   };
 
   return (
     <form className="flex flex-col gap-10" onSubmit={handleSubmit}>
-      
       <label>Date of Purchase</label>
       <input
         type="date"
@@ -177,7 +200,9 @@ const PurchaseForm = () => {
                 handleChangeItemGST(index, event.target.value)
               }
             />
-            <button onClick={(event) => handleRemoveItem(event, index)}>Remove</button>
+            <button onClick={(event) => handleRemoveItem(event, index)}>
+              Remove
+            </button>
           </div>
         ))}
         <div>
@@ -221,7 +246,13 @@ const PurchaseForm = () => {
               setNewItem({ ...newItem, amount: event.target.value })
             }
           />
-          <button onClick={(event) => {handleAddItem(event)}}>Add Item</button>
+          <button
+            onClick={(event) => {
+              handleAddItem(event);
+            }}
+          >
+            Add Item
+          </button>
         </div>
       </div>
 

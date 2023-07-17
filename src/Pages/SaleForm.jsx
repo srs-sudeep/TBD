@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { db } from "../services/firebase";
-import { addDoc, collection} from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, runTransaction, setDoc } from "firebase/firestore";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -93,7 +93,31 @@ const SaleForm = () => {
           buyerNumber: buyerNumber,
         });
         
-        
+        items.map(async (item) => {
+          const ref = doc(
+            db,
+            `tbd-database/${user.uid}/inventory`, item.modelNumber
+          );
+          const docSnap = await getDoc(ref);
+          if (docSnap.exists()) {
+            await runTransaction(db, async (transaction) => {
+              const sfDoc = await transaction.get(ref);
+
+              const newCount = (
+                Number(sfDoc.data().quantity) - Number(item.quantity)
+              ).toString();
+              transaction.update(ref, { quantity: newCount });
+            });
+          } else {
+            await setDoc(ref, {
+              brandName: item.brandName,
+              modelNumber: item.modelNumber,
+              quantity: item.quantity,
+              amount: item.amount,
+              gstApplicable: item.gstApplicable,
+            });
+          }
+        });
 
         return; 
       } catch (e) {
