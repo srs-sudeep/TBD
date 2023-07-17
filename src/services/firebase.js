@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp} from "firebase/app";
+import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -12,7 +12,7 @@ const firebaseConfig = {
   storageBucket: "tbd-coderelay.appspot.com",
   messagingSenderId: "853747905468",
   appId: "1:853747905468:web:4c25b9256f4b6f722571b9",
-  measurementId: "G-KGESJ3KEGM"
+  measurementId: "G-KGESJ3KEGM",
 };
 
 const app = initializeApp(firebaseConfig);

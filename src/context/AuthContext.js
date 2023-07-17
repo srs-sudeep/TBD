@@ -27,7 +27,6 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser);
       setUser(currentUser);
       if (currentUser !== null) {
         setUserName(currentUser.email.split('@')[0]);
