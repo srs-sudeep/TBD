@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "react-svg": "^16.1.18",
     "tailwindcss": "^3.3.3"
   }
 }
