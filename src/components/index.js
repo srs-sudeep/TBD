@@ -4,5 +4,6 @@ import Footer from './Footer';
 import Sidebar from './Sidebar';
 import Navbar from "./Navbar";
 import Background from "./Background";
+import Navbar2 from './Navbar2';
 
-export { Header, Footer, Navbar , Background, Sidebar};
+export { Header, Footer, Navbar, Navbar2 , Background, Sidebar};
