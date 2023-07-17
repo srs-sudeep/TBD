@@ -93,14 +93,16 @@ const Navbar = () => {
     return (
       <div className="navbar">
         <div className="navbarcontainer" style={default_style}>
-          <div className="navbar_left">
+          <div className="navbar_left" style={color}>
             <a href="/error" className="title">
               SoreTrek
             </a>
           </div>
           <div className="navbar_right">
             <img src={assets.avatar} alt="userimg" />
-            <div className="greeting">Hey {inventoryData.map((item) => (item.companyOwner))}</div>
+            <div className="greeting" style={color}>
+              Hey {inventoryData.map((item) => item.companyOwner)}
+            </div>
           </div>
         </div>
       </div>
