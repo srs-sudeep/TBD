@@ -44,12 +44,12 @@ export default function Inventory() {
   };
 
   const updateItem = async (updatedItem) => {
+
     const itemRef = doc(
       db,
-      `tbd-database/${user.uid}/inventory`,
-      updatedItem.modelNumber
+      `tbd-database/${user.uid}/inventory/${updatedItem.id}`,
     );
-    await updateDoc(itemRef, updatedItem);
+    await updateDoc(itemRef, {...updatedItem});
 
     setInventoryData((prevData) =>
       prevData.map((item) => (item.id === updatedItem.id ? updatedItem : item))
@@ -120,6 +120,7 @@ function EditForm({ selectedItem, cancelEdit, updateItem }) {
     // Create an updated item object
     const updatedItem = {
       id: selectedItem.modelNumber,
+      modelNumber,
       brandName,
       gstApplicable,
       quantity,
