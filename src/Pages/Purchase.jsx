@@ -33,7 +33,7 @@ export default function Sale() {
       <Sidebar />
     <div>
       <Link to="/purchaseform">
-        <button className="button_tryout mx-10 mt-0">Add Purchase!</button>
+        <button className="px-10 py-4 rounded-full text-gray-100 bg-gray-950 mx-10 mt-0">Add Purchase!</button>
       </Link>
       <table className="w-[75vw] mx-10 mt-5 border  border-gray-300">
         <thead>
