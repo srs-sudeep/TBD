@@ -7,7 +7,10 @@ import { useLocation } from "react-router-dom";
 function Navbar() {
   const location = useLocation();
   console.log(location.pathname);
-  if (location.pathname === "/") {
+  const default_style = {
+    "gap": "61rem"
+  };
+  if (location.pathname !== "/") {
     return (
       <div className="navbar">
         <div className="navbarcontainer">
@@ -29,13 +32,13 @@ function Navbar() {
   } else {
     return (
       <div className="navbar">
-        <div className="navbarcontainer">
+        <div className="navbarcontainer" style={default_style}>
           <div className="navbar_left">
             <div className="title">SoreTrek</div>
           </div>
           <div className="navbar_right">
             <img src={assets.userimg} alt="userimg" />
-            <div className="button_tryfree">Try Free</div>
+            <div className="greeting">Hey, User</div>
           </div>
         </div>
       </div>

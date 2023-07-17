@@ -1,0 +1,36 @@
+.sidebarbox {
+  width: 16.5rem;
+  height: calc(100vh - 100px);
+  flex-shrink: 0;
+  border-radius: 0rem 1.875rem 0rem 0rem;
+  background: linear-gradient(
+    106deg,
+    rgba(69, 160, 245, 0.38) 0%,
+    rgba(38, 227, 194, 0.38) 100%
+  );
+  box-shadow: -4px 4px 26px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.sidetabs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 4rem;
+  margin-left: 3.2rem;
+}
+
+.sidetabs li {
+  display: flex;
+  color: #0f0f0f;
+  text-align: left;
+  font-family: Montserrat;
+  font-size: 1.0625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 2.25rem;
+}
+
+.sidetabs li img {
+  margin-right: 0.5rem;
+}
