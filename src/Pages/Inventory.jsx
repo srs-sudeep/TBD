@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../services/firebase";
 import "./css/Inventory.css";
-import Sidebar from '../components/Sidebar';
+import Sidebar from "../components/Sidebar";
 import {
   getDocs,
   collection,
@@ -10,7 +10,7 @@ import {
   updateDoc,
   deleteDoc,
 } from "firebase/firestore";
-import * as assets from "../assets"
+import * as assets from "../assets";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -47,12 +47,11 @@ export default function Inventory() {
   };
 
   const updateItem = async (updatedItem) => {
-
     const itemRef = doc(
       db,
-      `tbd-database/${user.uid}/inventory/${updatedItem.id}`,
+      `tbd-database/${user.uid}/inventory/${updatedItem.id}`
     );
-    await updateDoc(itemRef, {...updatedItem});
+    await updateDoc(itemRef, { ...updatedItem });
 
     setInventoryData((prevData) =>
       prevData.map((item) => (item.id === updatedItem.id ? updatedItem : item))
@@ -63,53 +62,61 @@ export default function Inventory() {
 
   return (
     <>
-    <div className='flex flex-row'>
-    <Sidebar />
-    <div>    
-      <div className="mx-10 mt-5 mb-8 text-4xl font-bold">Inventory</div>
-      <table className="w-[75vw] mx-10 my-5 border  border-gray-300">
-        <thead>
-          <tr >
-            <th className="py-2 px-8 border-b">Model No.</th>
-            <th className="py-2 px-8 border-b">Brand Name</th>
-            <th className="py-2 px-8 border-b">GstApplicable</th>
-            <th className="py-2 px-8 border-b">Quantity</th>
-            <th className="py-2 px-8 border-b">Amount</th>
-            <th className="py-2 px-8 border-b">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {inventoryData.map((item) => (
-            <React.Fragment key={item.id}>
-              {selectedItem && selectedItem.id === item.id ? (
-                <EditForm
-                  selectedItem={selectedItem}
-                  cancelEdit={() => setSelectedItem(null)}
-                  updateItem={updateItem}
-                />
-              ) : (
-                <tr >
-                  <td >{item.modelNumber}</td>
-                  <td >{item.brandName}</td>
-                  <td>{item.gstApplicable}</td>
-                  <td>{item.quantity}</td>
-                  <td>{item.amount}</td>
-                  <td>
-                    <button onClick={() => handleEdit(item.id)}>
-                      <img src={assets.Edit} alt="edit" className="edit h-[20px]"/>
-                    </button>
-                    <button onClick={() => handleDelete(item.id)}>
-                      <img src={assets.Delete} alt="delete" className="delete h-[20px]"/>
-                    </button>
-                  </td>
-                </tr>
-              )}
-            </React.Fragment>
-          ))}
-        </tbody>
-      </table>
+      <div className="flex flex-row">
+        <Sidebar />
+        <div>
+          <div className="mx-10 mt-5 mb-8 text-4xl font-bold">Inventory</div>
+          <table className="w-[75vw] mx-10 my-5 border  border-gray-300">
+            <thead>
+              <tr>
+                <th className="py-2 px-8 border-b">Model No.</th>
+                <th className="py-2 px-8 border-b">Brand Name</th>
+                <th className="py-2 px-8 border-b">GstApplicable</th>
+                <th className="py-2 px-8 border-b">Quantity</th>
+                <th className="py-2 px-8 border-b">Amount</th>
+                <th className="py-2 px-8 border-b">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {inventoryData.map((item) => (
+                <React.Fragment key={item.id}>
+                  {selectedItem && selectedItem.id === item.id ? (
+                    <EditForm
+                      selectedItem={selectedItem}
+                      cancelEdit={() => setSelectedItem(null)}
+                      updateItem={updateItem}
+                    />
+                  ) : (
+                    <tr>
+                      <td>{item.modelNumber}</td>
+                      <td>{item.brandName}</td>
+                      <td>{item.gstApplicable}</td>
+                      <td>{item.quantity}</td>
+                      <td>{item.amount}</td>
+                      <td>
+                        <button onClick={() => handleEdit(item.id)}>
+                          <img
+                            src={assets.Edit}
+                            alt="edit"
+                            className="edit h-[20px] mr-2"
+                          />
+                        </button>
+                        <button onClick={() => handleDelete(item.id)}>
+                          <img
+                            src={assets.Delete}
+                            alt="delete"
+                            className="delete h-[20px]"
+                          />
+                        </button>
+                      </td>
+                    </tr>
+                  )}
+                </React.Fragment>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
     </>
   );
 }
@@ -156,6 +163,7 @@ function EditForm({ selectedItem, cancelEdit, updateItem }) {
           type="text"
           value={modelNumber}
           onChange={(e) => setmodelNumber(e.target.value)}
+          className="shadow appearance-none border rounded w-[140px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </td>
       <td>
@@ -163,6 +171,7 @@ function EditForm({ selectedItem, cancelEdit, updateItem }) {
           type="text"
           value={brandName}
           onChange={(e) => setBrandName(e.target.value)}
+          className="shadow appearance-none border rounded w-[140px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </td>
       <td>
@@ -170,6 +179,7 @@ function EditForm({ selectedItem, cancelEdit, updateItem }) {
           type="text"
           value={gstApplicable}
           onChange={(e) => setGstApplicable(e.target.value)}
+          className="shadow appearance-none border rounded w-[140px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </td>
       <td>
@@ -177,6 +187,7 @@ function EditForm({ selectedItem, cancelEdit, updateItem }) {
           type="text"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
+          className="shadow appearance-none border rounded w-[140px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </td>
       <td>
@@ -184,11 +195,16 @@ function EditForm({ selectedItem, cancelEdit, updateItem }) {
           type="text"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+          className="shadow appearance-none border rounded w-[140px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </td>
       <td>
-        <button onClick={handleSubmit}>Save</button>
-        <button onClick={cancelEdit}>Cancel</button>
+        <button onClick={handleSubmit}>
+          <img src={assets.Tick} alt="edit" className="edit h-[20px] mr-2" />
+        </button>
+        <button onClick={cancelEdit}>
+          <img src={assets.Cross} alt="delete" className="delete h-[20px]" />
+        </button>
       </td>
     </tr>
   );

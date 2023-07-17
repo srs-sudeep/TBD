@@ -34,3 +34,7 @@
 .sidetabs li img {
   margin-right: 0.5rem;
 }
+.activeLink {
+  color: aqua;
+  font-weight: 900;
+}
