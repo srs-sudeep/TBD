@@ -1,7 +1,6 @@
 import React from 'react';
 import "./css/Footer.css";
 import { logonav } from "../assets";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 const Footer = () => {
