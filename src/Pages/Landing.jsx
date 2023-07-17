@@ -1,5 +1,5 @@
 import React from "react";
-import * as components from "../components";
+// import * as components from "../components";
 import * as assets from "../assets";
 import "./css/Landing.css";
 

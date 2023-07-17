@@ -36,7 +36,6 @@ export default function Sale() {
         <thead>
           <tr>
             <th>Date of sale</th>
-            <th>Items</th>
             <th>Buyer Name</th>
             <th>Buyer Number</th>
             <th>Amount</th>
@@ -46,7 +45,6 @@ export default function Sale() {
           {inventoryData.map((item) => (
             <tr key={item.id}>
               <td>{item.dateOfSale}</td>
-              <td>{item.buyerName}</td>
               <td>{item.buyerName}</td>
               <td>{item.buyerNumber}</td>
               <td>{item.amount}</td>

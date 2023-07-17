@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/Background.css";
 
-function Background() {
+const Background =() => {
   return (
     <div class="background">
       <div className="backlight blue one"></div>
