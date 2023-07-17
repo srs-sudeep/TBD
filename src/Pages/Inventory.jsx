@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../services/firebase";
+import "./css/Inventory.css";
+import Sidebar from '../components/Sidebar';
 import {
   getDocs,
   collection,
@@ -59,16 +61,19 @@ export default function Inventory() {
   };
 
   return (
-    <div>
-      <table>
+    <>
+    <div className='flex'>
+    <Sidebar />
+    <div>    
+      <table className="w-[82vw] mx-10 my-5 border  border-gray-300">
         <thead>
-          <tr>
-            <th>Model No.</th>
-            <th>Brand Name</th>
-            <th>GstApplicable</th>
-            <th>Quantity</th>
-            <th>Amount</th>
-            <th>Actions</th>
+          <tr >
+            <th className="py-2 px-8 border-b">Model No.</th>
+            <th className="py-2 px-8 border-b">Brand Name</th>
+            <th className="py-2 px-8 border-b">GstApplicable</th>
+            <th className="py-2 px-8 border-b">Quantity</th>
+            <th className="py-2 px-8 border-b">Amount</th>
+            <th className="py-2 px-8 border-b">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -81,15 +86,15 @@ export default function Inventory() {
                   updateItem={updateItem}
                 />
               ) : (
-                <tr>
-                  <td>{item.modelNumber}</td>
-                  <td>{item.brandName}</td>
+                <tr >
+                  <td >{item.modelNumber}</td>
+                  <td >{item.brandName}</td>
                   <td>{item.gstApplicable}</td>
                   <td>{item.quantity}</td>
                   <td>{item.amount}</td>
                   <td>
-                    <button onClick={() => handleEdit(item.id)}>Edit</button>
-                    <button onClick={() => handleDelete(item.id)}>
+                    <button className="button  bg-black text-white my-2 mx-2 p-1" onClick={() => handleEdit(item.id)}>Edit</button>
+                    <button className="button  bg-black text-white p-1 rounded-" onClick={() => handleDelete(item.id)}>
                       Delete
                     </button>
                   </td>
@@ -99,7 +104,9 @@ export default function Inventory() {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
+    </>
   );
 }
 

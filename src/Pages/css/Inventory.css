@@ -1,0 +1,20 @@
+
+  th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  table {
+    overflow-x: auto ;
+  }
+.button {
+    border-radius: 0.15cm;
+}

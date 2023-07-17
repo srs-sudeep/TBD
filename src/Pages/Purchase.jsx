@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../services/firebase";
+import Sidebar from '../components/Sidebar';
 import {
   getDocs,
   collection,
@@ -28,18 +29,20 @@ export default function Sale() {
     fetchInventoryData();
   }, [user.uid]);
   return (
+    <div className="flex">
+      <Sidebar />
     <div>
       <Link to="/purchaseform">
-        <button>Add Purchase!</button>
+        <button className="button_tryout mx-10 mt-0">Add Purchase!</button>
       </Link>
-      <table>
+      <table className="w-[82vw] mx-10 mt-5 border  border-gray-300">
         <thead>
           <tr>
-            <th>Date of purchase</th>
-            <th>Seller Name</th>
-            <th>Seller Number</th>
+            <th className="py-2 px-8 border-b">Date of purchase</th>
+            <th className="py-2 px-8 border-b">Seller Name</th>
+            <th className="py-2 px-8 border-b">Seller Number</th>
 
-            <th>Amount</th>
+            <th className="py-2 px-8 border-b">Amount</th>
           </tr>
         </thead>
         <tbody>
@@ -53,6 +56,7 @@ export default function Sale() {
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 }
