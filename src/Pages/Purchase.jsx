@@ -56,7 +56,7 @@ export default function Sale() {
           ))}
         </tbody>
       </table>
-    </div>
+      </div>
     </div>
   );
 }

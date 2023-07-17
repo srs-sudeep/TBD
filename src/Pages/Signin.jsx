@@ -63,12 +63,6 @@ const Signin = () => {
           Sign In
         </button>
       </form>
-      <button
-        className="border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-4 my-2 text-white"
-        onClick={tempfn}
-      >
-        click me
-      </button>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../services/firebase";
+import Sidebar from '../components/Sidebar';
 import {
   getDocs,
   collection,
@@ -24,7 +25,8 @@ export default function Profile() {
     fetchInventoryData();
   }, [user.uid]);
   return (
-    <div>
+    <div className="flex flex-row gap-6">
+      <Sidebar />
       {inventoryData.map((item) => (
         <h1 key={item.id}>
           <h3>{item.address}</h3>

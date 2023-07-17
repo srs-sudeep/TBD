@@ -53,6 +53,24 @@
   font-weight: 500;
 }
 
+.button_tryout_for_form {
+  display: inline-flex;
+  min-height: 3.125rem;
+  margin: 10px auto;
+  padding: 0.625rem 3.75rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 1.5625rem;
+  background: #0f0f0f;
+  align-self: flex-start;
+  margin-top: 1.31rem;
+  color: #fcfcfc;
+  font-family: Montserrat;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
 .navbar_right img {
   width: 3.75rem;
   height: 3.75rem;
