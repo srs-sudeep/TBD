@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../services/firebase";
 import Sidebar from '../components/Sidebar';
+import * as assets from "../assets";
+import "./css/Profile.css";
 import {
   getDocs,
   collection,
@@ -25,16 +27,20 @@ export default function Profile() {
     fetchInventoryData();
   }, [user.uid]);
   return (
-    <div className="flex flex-row gap-6">
+    <div className="flex flex-row ">
       <Sidebar />
+      <div className="card p-16 m-0" >
+      <img className="image h-32 justify-center mb-5" src={assets.avatar} alt="userimg" />
       {inventoryData.map((item) => (
-        <h1 key={item.id}>
-          <h3>{item.address}</h3>
-          <h3>{item.companyName}</h3>
-          <h3>{item.companyOwner}</h3>
-          <h3>{item.contactNo}</h3>
-        </h1>
+        <ul key={item.id}>
+          <li className="font-bold text-4xl">{item.companyOwner}</li>
+          <li>Company Name: {item.companyName}</li>
+          <li>Address: {item.address}</li>
+          <li>Contact: {item.contactNo}</li>
+        </ul>
       ))}
+      </div>
     </div>
+
   );
 }

@@ -60,7 +60,7 @@ const Sidebar = () => {
             <button onClick={handleLogout}>
               <li>
                 {" "}
-                <img src={assets.Group} alt="groupicon" />
+                <img src={assets.Sign_out_squre} alt="groupicon" />
                 Logout
               </li>
             </button>

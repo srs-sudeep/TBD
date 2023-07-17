@@ -40,7 +40,7 @@ const Navbar = () => {
             <a href="/error" className="title">SoreTrek</a>
           </div>
           <div className="navbar_right">
-            <img src={assets.userimg} alt="userimg" />
+            <img src={assets.avatar} alt="userimg" />
             <div className="greeting">Hey {user.email}</div>
           </div>
         </div>
