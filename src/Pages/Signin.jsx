@@ -32,34 +32,34 @@ const Signin = () => {
   };
 
   return (
-    <div className="max-w-[700px] mx-auto my-16 p-4">
+    <div className="max-w-[700px] mx-auto my-16 w-[30vw] px-12 py-10 bg-slate-50 shadow-md rounded-md">
       <div>
-        <h1 className='text-2xl font-bold py-2 '>Sign in to your account</h1>
-        <p className='py-2'>
+        <h1 className='text-3xl font-bold py-2 '>Sign In</h1>
+        <p className='py-1'>
           Don't have an account yet?{' '}
           <Link to='/signup' className='underline'>
             Sign up.
           </Link>
         </p>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className="flex flex-col py-2">
-          <label className="py-2 font-medium">Email Address</label>
+      <form className='flex flex-col align-center' onSubmit={handleSubmit}>
+        <div className='flex flex-col py-2 focus-within:font-bold'>
+          <label className='py-2 text-2xl'>Email Address</label>
           <input
             onChange={(e) => setEmail(e.target.value)}
-            className="border p-3"
+            className='border p-3 rounded-md shadow-sm'
             type="email"
           />
         </div>
-        <div className="flex flex-col py-2">
-          <label className="py-2 font-medium">Password</label>
+        <div className='flex flex-col py-2 focus-within:font-bold'>
+          <label className='py-2 text-2xl'>Password</label>
           <input
             onChange={(e) => setPassword(e.target.value)}
-            className="border p-3"
+            className='border p-3 rounded-md shadow-sm'
             type="password"
           />
         </div>
-        <button className="border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-4 my-2 text-white">
+        <button className="button_tryout_for_form shadow-md w-[200px]">
           Sign In
         </button>
       </form>

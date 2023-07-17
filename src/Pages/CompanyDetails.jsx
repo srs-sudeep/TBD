@@ -51,44 +51,56 @@ const CompanyDetails = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="companyName">Company Name:</label>
+    <div className='flex flex-col max-w-[700px] mx-[auto] mt-2 mb-2 w-[30vw] px-12 pt-8 pb-4 bg-slate-50 shadow-md rounded-md '>
+      <h1 className='m-auto text-3xl pb-6 font-semibold'>Company Details</h1>
+    <form className='flex flex-col align-center justify-between' onSubmit={handleSubmit}>
+      <div  className='flex flex-col py-2 focus-within:font-bold'>
+      <label className='py-2 text-1xl' htmlFor="companyName">Company Name:</label>
       <input
+      className='border p-3 rounded-md shadow-sm'
         type="text"
         id="companyName"
         name="companyName"
         value={companyName}
         onChange={(event) => setCompanyName(event.target.value)}
-      /><br /><br />
-
-      <label htmlFor="contactNo">Contact Number:</label>
+      />
+      </div>
+      <div  className='flex flex-col py-2 focus-within:font-bold'>
+      <label className='py-2 text-1xl focus-within:font-semibold' htmlFor="contactNo">Contact Number:</label>
       <input
+      className='border p-3 rounded-md shadow-sm'
         type="text"
         id="contactNo"
         name="contactNo"
         value={contactNo}
         onChange={(event) => setContactNo(event.target.value)}
-      /><br /><br />
-
-      <label htmlFor="address">Address:</label>
+      />
+      </div>
+      <div className='flex flex-col py-2 focus-within:font-bold'>
+      <label className='pt-1 text-1xl focus-within:font-semibold' htmlFor="address">Address:</label>
       <textarea
+      className='border p-3 rounded-md shadow-sm'
         id="address"
         name="address"
         value={address}
         onChange={(event) => setAddress(event.target.value)}
-      ></textarea><br /><br />
-
-      <label htmlFor="companyOwner">Company Owner:</label>
+      ></textarea>
+      </div>
+      <div  className='flex flex-col py-2 focus-within:font-bold'>
+      <label className='pt-1 text-1xl focus-within:font-semibold' htmlFor="companyOwner">Company Owner:</label>
       <input
+      className='border p-3 rounded-md shadow-sm'
         type="text"
         id="companyOwner"
         name="companyOwner"
         value={companyOwner}
         onChange={(event) => setCompanyOwner(event.target.value)}
-      /><br /><br />
+      />
+      </div>
 
-      <input type="submit" value="Submit" />
+      <input className="button_tryout_for_form shadow-md w-[200px]" type="submit" value="Submit" />
     </form>
+    </div>
   );
 }
 
