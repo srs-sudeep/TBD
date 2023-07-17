@@ -16,7 +16,7 @@ function Landing() {
           Say goodbye to spreadsheet headaches and hello to a smarter way of
           running your business.{" "}
         </div>
-        <div className="button_tryout">Try Out</div>
+        <a href='/signup' className="button_tryout">Try Out</a>
         </div>
       </div>
       
