@@ -14,7 +14,7 @@ const Signup = () => {
     setError('');
     try {
       await createUser(email, password);
-      navigate('/account')
+      navigate('/companydetails')
     } catch (e) {
       setError(e.message);
       console.log(e.message);
@@ -26,8 +26,8 @@ const Signup = () => {
       <div>
         <h1 className='text-2xl font-bold py-2'>Sign up for a free account</h1>
         <p className='py-2'>
-          Already have an account yet?{' '}
-          <Link to='/' className='underline'>
+          Already have an account?{' '}
+          <Link to='/signin' className='underline'>
             Sign in.
           </Link>
         </p>
