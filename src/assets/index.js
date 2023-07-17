@@ -13,6 +13,7 @@ import Delete from "./images/delete.png";
 import Edit from "./images/editing.png";
 import Tick from "./images/tick.png";
 import Cross  from "./images/cross.png";
+import screens_dark from "./images/screens_dark.png";
 export {
   logonav,
   avatar,
@@ -29,4 +30,5 @@ export {
   Edit,
   Tick,
   Cross,
+  screens_dark,
 };

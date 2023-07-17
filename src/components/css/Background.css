@@ -1,44 +1,46 @@
 .background {
-    color: black;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: -100;
-    overflow: hidden;
-  }
-  
-  .backlight {
-    width: 19.9375rem;
-    height: 19.9375rem;
-    flex-shrink: 0;
-    border-radius: 19.9375rem;
-    filter: blur(113px);
-  }
-  
-  .blue {
-    background: rgba(69, 160, 245, 0.38);
-  }
-  
-  .green {
-    background: rgba(38, 227, 194, 0.38);
-  }
-  
-  .one {
-    position: absolute;
-    top: 4.81rem;
-    left: -7rem;
-  }
-  
-  .two {
-    position: absolute;
-    top: 37.2rem;
-    left: 29.6rem;
-  }
-  
-  .three {
-      position: absolute;
-      top: 0rem;
-      left: 64.3rem;
-  }
+  color: black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  overflow: hidden;
+  background-color: #fcfcfc;
+}
+
+.backlight {
+  width: 19.9375rem;
+  height: 19.9375rem;
+  flex-shrink: 0;
+  border-radius: 19.9375rem;
+  filter: blur(113px);
+  z-index: -50;
+}
+
+.blue {
+  background: rgba(69, 160, 245, 0.38);
+}
+
+.green {
+  background: rgba(38, 227, 194, 0.38);
+}
+
+.one {
+  position: absolute;
+  top: 4.81rem;
+  left: -7rem;
+}
+
+.two {
+  position: absolute;
+  top: 37.2rem;
+  left: 29.6rem;
+}
+
+.three {
+  position: absolute;
+  top: 0rem;
+  left: 64.3rem;
+}

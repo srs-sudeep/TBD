@@ -14,11 +14,27 @@ import PurchaseForm from "./Pages/PurchaseForm";
 import SaleForm from "./Pages/SaleForm";
 import Profile from "./Pages/profile";
 import Error from "./Pages/Error";
-import { Background, Navbar } from "./components";
+import { Background, Navbar, Sidebar } from "./components";
+import { createContext, useState} from "react";
+
+export const DarkModeContext = createContext(null);
+
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const style = {
+    display: "flex",
+  };
+
+
   return (
     <div>
       <AuthContextProvider>
+        <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -36,19 +52,69 @@ function App() {
             path="/home"
             element={
               <ProtectedRoute>
+                <Sidebar />
                 <Home />
               </ProtectedRoute>
             }
           />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/sale" element={<Sale />} />
-          <Route path="/purchase" element={<Purchase />} />
-          <Route path="/purchaseform" element={<PurchaseForm />} />
-          <Route path="/saleform" element={<SaleForm />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/inventory"
+            element={
+              <div style={style}>
+                <Sidebar />
+                <Inventory />
+              </div>
+            }
+          />
+          <Route
+            path="/sale"
+            element={
+              <div style={style}>
+                <Sidebar />
+                <Sale />
+              </div>
+            }
+          />
+          <Route
+            path="/purchase"
+            element={
+              <div style={style}>
+                <Sidebar />
+                <Purchase />
+              </div>
+            }
+          />
+          <Route
+            path="/purchaseform"
+            element={
+              <div style={style}>
+                <Sidebar />
+                <PurchaseForm />
+              </div>
+            }
+          />
+          <Route
+            path="/saleform"
+            element={
+              <div style={style}>
+                <Sidebar />
+                <SaleForm />
+              </div>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <div style={style}>
+                <Sidebar />
+                <Profile />
+              </div>
+            }
+          />
           <Route path="*" element={<Error />} />
         </Routes>
         <Background />
+        </DarkModeContext.Provider>
       </AuthContextProvider>
     </div>
   );
