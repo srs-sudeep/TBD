@@ -14,3 +14,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.right-div{
+  height: calc(100vh - 100px);
+  width: calc(100vw - 16.5rem);
+  overflow: scroll;
+}

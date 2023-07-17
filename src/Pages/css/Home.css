@@ -1,0 +1,75 @@
+.box {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.box .rectangle-wrapper {
+  border: 0px none;
+}
+
+.box .rectangle1 {
+  background: linear-gradient(
+    180deg,
+    rgb(69, 160, 245) 0%,
+    rgba(69, 160, 245, 0.31) 100%
+  );
+  border-radius: 30px;
+  box-shadow: 0px 4px 18px #00000040;
+  height: 207px;
+  width: 350px;
+}
+.box .rectangle2 {
+  background: linear-gradient(
+    180deg,
+    rgb(38, 227, 194) 0%,
+    rgba(38, 227, 194, 0.31) 100%
+  );
+  border-radius: 30px;
+  box-shadow: 0px 4px 18px #00000040;
+  height: 207px;
+  width: 350px;
+}
+.box .rectangle3 {
+  background: linear-gradient(
+    180deg,
+    rgb(221.85, 151.03, 85.04) 0%,
+    rgba(222, 151, 85, 0.31) 100%
+  );
+  border-radius: 30px;
+  box-shadow: 0px 4px 18px #00000040;
+  height: 207px;
+  width: 350px;
+}
+.text-wrapper {
+  padding-top: 30px;
+  padding-left: 40px;
+  color: #ffffff;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: start;
+}
+.price {
+  padding-top: 30px;
+  color: #fff;
+  text-align: right;
+  font-family: Montserrat;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.dollar {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-right: 20px;
+}
