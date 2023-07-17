@@ -11,10 +11,8 @@ import Inventory from "./Pages/Inventory";
 import Sale from "./Pages/Sale";
 import Purchase from "./Pages/Purchase";
 import PurchaseForm from "./Pages/PurchaseForm";
-import Customer from "./Pages/Customer";
 import SaleForm from "./Pages/SaleForm";
-import InventoryForm from "./Pages/InventoryForm";
-
+import Profile from "./Pages/profile";
 
 function App() {
   return (
@@ -44,9 +42,8 @@ function App() {
           <Route path='/sale' element={<Sale />} />
           <Route path='/purchase' element={<Purchase />} />
           <Route path='/purchaseform' element={<PurchaseForm />} />
-          <Route path='/customer' element={<Customer />} />
-          <Route path='/inventoryform' element={<InventoryForm />}/>
           <Route path='/saleform' element={<SaleForm />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
       </AuthContextProvider>
     </div>

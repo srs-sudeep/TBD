@@ -16,8 +16,8 @@ const Sidebar = () => {
       <Link to='/purchase' className='underline'>
         purchase
       </Link>
-      <Link to='/customer' className='underline'>
-        customer
+      <Link to='/profile' className='underline'>
+        Profile
       </Link>
     </div>
   );
