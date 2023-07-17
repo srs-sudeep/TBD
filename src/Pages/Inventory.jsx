@@ -64,7 +64,7 @@ export default function Inventory() {
     <>
     <div className='flex flex-row'>
     <Sidebar />
-    <div className="right-div">    
+    <div>    
       <table className="w-[75vw] mx-10 my-5 border  border-gray-300">
         <thead>
           <tr >

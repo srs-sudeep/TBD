@@ -35,7 +35,7 @@ export default function Sale() {
       <Link to="/purchaseform">
         <button className="button_tryout mx-10 mt-0">Add Purchase!</button>
       </Link>
-      <table className="w-[82vw] mx-10 mt-5 border  border-gray-300">
+      <table className="w-[75vw] mx-10 mt-5 border  border-gray-300">
         <thead>
           <tr>
             <th className="py-2 px-8 border-b">Date of purchase</th>
