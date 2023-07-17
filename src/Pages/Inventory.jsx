@@ -62,10 +62,10 @@ export default function Inventory() {
 
   return (
     <>
-    <div className='flex'>
+    <div className='flex flex-row'>
     <Sidebar />
-    <div>    
-      <table className="w-[82vw] mx-10 my-5 border  border-gray-300">
+    <div className="right-div">    
+      <table className="w-[75vw] mx-10 my-5 border  border-gray-300">
         <thead>
           <tr >
             <th className="py-2 px-8 border-b">Model No.</th>
