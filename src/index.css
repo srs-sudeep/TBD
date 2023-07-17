@@ -19,3 +19,29 @@ code {
   width: calc(100vw - 16.5rem);
   overflow: scroll;
 }
+
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0.25rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+html {
+  scroll-behavior: smooth;
+}
