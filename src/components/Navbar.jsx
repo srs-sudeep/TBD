@@ -10,7 +10,7 @@ function Navbar() {
   const default_style = {
     "gap": "61rem"
   };
-  if (location.pathname !== "/") {
+  if (location.pathname === "/") {
     return (
       <div className="navbar">
         <div className="navbarcontainer">

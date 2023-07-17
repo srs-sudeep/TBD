@@ -18,7 +18,6 @@ import InventoryForm from "./Pages/InventoryForm";
 
 function App() {
   return (
-<<<<<<< HEAD
     <div>
       <AuthContextProvider>
         <Routes>
@@ -51,13 +50,6 @@ function App() {
         </Routes>
       </AuthContextProvider>
     </div>
-=======
-    <>
-      <components.Navbar />
-      <components.Sidebar />
-      <components.Background />
-    </>
->>>>>>> 7daeca8 (created sidebar component)
   );
 }
 
